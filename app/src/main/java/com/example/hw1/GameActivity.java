@@ -27,7 +27,6 @@ public class GameActivity extends AppCompatActivity {
     private int lifeCount = 2;
     private ImageButton leftArrow, rightArrow;
     private int carPos = CENTER;
-    private boolean hitFlag = false;
 
     private static final int DELAY = 1000;
     private int clock = 0;
@@ -88,6 +87,17 @@ public class GameActivity extends AppCompatActivity {
     private void updateDynamite() {
         clock++;
         hideExplosions();
+        for (int i = 0; i < 3; i++) {
+            if (game_IMG_dynamites[5][i].getVisibility() == View.VISIBLE) {
+                game_IMG_dynamites[5][i].setVisibility(View.GONE);
+            }
+            for (int j = 4; j >= 0; j--) {
+                if (game_IMG_dynamites[j][i].getVisibility() == View.VISIBLE) {
+                    game_IMG_dynamites[j][i].setVisibility(View.INVISIBLE);
+                    game_IMG_dynamites[j + 1][i].setVisibility(View.VISIBLE);
+                }
+            }
+        }
         if (clock % 2 == 0) {
             int lane = getDynamiteRandomLane();
             switch (lane) {
@@ -100,22 +110,6 @@ public class GameActivity extends AppCompatActivity {
                 case RIGHT:
                     game_IMG_dynamites[0][RIGHT].setVisibility(View.VISIBLE);
                     break;
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            if (game_IMG_dynamites[5][i].getVisibility() == View.VISIBLE) {
-                game_IMG_dynamites[5][i].setVisibility(View.GONE);
-            }
-//            else if (game_IMG_dynamites[5][i].getVisibility() == View.GONE && hitFlag){
-//                game_IMG_explosions[i].setVisibility(View.GONE);
-//                game_IMG_car[i].setVisibility(View.VISIBLE);
-//                hitFlag = false;
-//            }
-            for (int j = 4; j >= 0; j--) {
-                if (game_IMG_dynamites[j][i].getVisibility() == View.VISIBLE) {
-                    game_IMG_dynamites[j][i].setVisibility(View.INVISIBLE);
-                    game_IMG_dynamites[j + 1][i].setVisibility(View.VISIBLE);
-                }
             }
         }
        checkHit();
@@ -137,7 +131,6 @@ public class GameActivity extends AppCompatActivity {
             toast();
             vibrate();
             game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            //hitFlag = true;
         } else if (game_IMG_dynamites[5][CENTER].getVisibility() == View.VISIBLE
                 && game_IMG_car[CENTER].getVisibility() == View.VISIBLE) {
             game_IMG_dynamites[5][CENTER].setVisibility(View.GONE);
@@ -146,7 +139,6 @@ public class GameActivity extends AppCompatActivity {
             toast();
             vibrate();
             game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            //hitFlag = true;
         } else if (game_IMG_dynamites[5][RIGHT].getVisibility() == View.VISIBLE
                 && game_IMG_car[RIGHT].getVisibility() == View.VISIBLE) {
             game_IMG_dynamites[5][RIGHT].setVisibility(View.GONE);
@@ -155,7 +147,6 @@ public class GameActivity extends AppCompatActivity {
             toast();
             vibrate();
             game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            //hitFlag = true;
         }
         // TODO: What happens after getting hit 3 times.
     }
@@ -169,9 +160,16 @@ public class GameActivity extends AppCompatActivity {
                 Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
                 break;
             case 0:
-                Toast.makeText(this, " ):  GAME OVER  :( ", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "##  Restarting Game  ## ", Toast.LENGTH_LONG).show();
                 break;
         }
+    }
+
+    private void restartGame() {
+        lifeCount = 2;
+        game_IMG_lives[0].setVisibility(View.VISIBLE);
+        game_IMG_lives[1].setVisibility(View.VISIBLE);
+        game_IMG_lives[2].setVisibility(View.VISIBLE);
     }
 
     private void vibrate() {
@@ -180,7 +178,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private int getDynamiteRandomLane() {
-        //randDynamite = true;
         return (int) (Math.random()*(RIGHT+1-LEFT)) + LEFT;
     }
 
