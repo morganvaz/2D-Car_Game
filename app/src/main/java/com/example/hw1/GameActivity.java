@@ -128,39 +128,39 @@ public class GameActivity extends AppCompatActivity {
             game_IMG_dynamites[5][LEFT].setVisibility(View.GONE);
             game_IMG_car[LEFT].setVisibility(View.GONE);
             game_IMG_explosions[LEFT].setVisibility(View.VISIBLE);
+            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
             toast();
             vibrate();
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
         } else if (game_IMG_dynamites[5][CENTER].getVisibility() == View.VISIBLE
                 && game_IMG_car[CENTER].getVisibility() == View.VISIBLE) {
             game_IMG_dynamites[5][CENTER].setVisibility(View.GONE);
             game_IMG_car[CENTER].setVisibility(View.GONE);
             game_IMG_explosions[CENTER].setVisibility(View.VISIBLE);
+            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
             toast();
             vibrate();
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
         } else if (game_IMG_dynamites[5][RIGHT].getVisibility() == View.VISIBLE
                 && game_IMG_car[RIGHT].getVisibility() == View.VISIBLE) {
             game_IMG_dynamites[5][RIGHT].setVisibility(View.GONE);
             game_IMG_car[RIGHT].setVisibility(View.GONE);
             game_IMG_explosions[RIGHT].setVisibility(View.VISIBLE);
+            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
             toast();
             vibrate();
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
         }
-        // TODO: What happens after getting hit 3 times.
     }
 
     private void toast() {
         switch(lifeCount){
-            case 2:
+            case 1:
                 Toast.makeText(this, "2 more lives to go!", Toast.LENGTH_LONG).show();
                 break;
-            case 1:
+            case 0:
                 Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
                 break;
-            case 0:
+            case -1:
                 Toast.makeText(this, "##  Restarting Game  ## ", Toast.LENGTH_LONG).show();
+                restartGame();
                 break;
         }
     }

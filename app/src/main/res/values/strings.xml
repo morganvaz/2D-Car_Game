@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">HW1</string>
-    <string name="lives">Lives:</string>
     <string name="start_game">Start Game</string>
-    <string name="main_page_headline">Dont Explode The Car !</string>
+    <string name="main_page_headline">Don\'t Explode The Car !</string>
 </resources>
