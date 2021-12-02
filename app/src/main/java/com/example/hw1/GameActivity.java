@@ -128,47 +128,16 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void checkHit() {
-        if (game_IMG_dynamites[10][LEFT].getVisibility() == View.VISIBLE
-                && game_IMG_car[LEFT].getVisibility() == View.VISIBLE) {
-            game_IMG_dynamites[10][LEFT].setVisibility(View.GONE);
-            game_IMG_car[LEFT].setVisibility(View.GONE);
-            game_IMG_explosions[LEFT].setVisibility(View.VISIBLE);
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            toast();
-            vibrate();
-        } else if (game_IMG_dynamites[10][CENTER_LEFT].getVisibility() == View.VISIBLE
-                && game_IMG_car[CENTER_LEFT].getVisibility() == View.VISIBLE) {
-            game_IMG_dynamites[10][CENTER_LEFT].setVisibility(View.GONE);
-            game_IMG_car[CENTER_LEFT].setVisibility(View.GONE);
-            game_IMG_explosions[CENTER_LEFT].setVisibility(View.VISIBLE);
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            toast();
-            vibrate();
-        } else if (game_IMG_dynamites[10][CENTER].getVisibility() == View.VISIBLE
-                && game_IMG_car[CENTER].getVisibility() == View.VISIBLE) {
-            game_IMG_dynamites[10][CENTER].setVisibility(View.GONE);
-            game_IMG_car[CENTER].setVisibility(View.GONE);
-            game_IMG_explosions[CENTER].setVisibility(View.VISIBLE);
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            toast();
-            vibrate();
-        } else if (game_IMG_dynamites[10][CENTER_RIGHT].getVisibility() == View.VISIBLE
-                && game_IMG_car[CENTER_RIGHT].getVisibility() == View.VISIBLE) {
-            game_IMG_dynamites[10][CENTER_RIGHT].setVisibility(View.GONE);
-            game_IMG_car[CENTER_RIGHT].setVisibility(View.GONE);
-            game_IMG_explosions[CENTER_RIGHT].setVisibility(View.VISIBLE);
-            game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            toast();
-            vibrate();
-        } else if (game_IMG_dynamites[10][RIGHT].getVisibility() == View.VISIBLE
-                && game_IMG_car[RIGHT].getVisibility() == View.VISIBLE) {
-            game_IMG_dynamites[10][RIGHT].setVisibility(View.GONE);
-            game_IMG_car[RIGHT].setVisibility(View.GONE);
-            game_IMG_explosions[RIGHT].setVisibility(View.VISIBLE);
+        if (game_IMG_dynamites[10][carPos].getVisibility() == View.VISIBLE
+                && game_IMG_car[carPos].getVisibility() == View.VISIBLE) {
+            game_IMG_dynamites[10][carPos].setVisibility(View.GONE);
+            game_IMG_car[carPos].setVisibility(View.GONE);
+            game_IMG_explosions[carPos].setVisibility(View.VISIBLE);
             game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
             toast();
             vibrate();
         }
+
     }
 
     private void toast() {
