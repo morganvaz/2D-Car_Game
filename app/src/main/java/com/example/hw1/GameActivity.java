@@ -18,6 +18,7 @@ import java.util.TimerTask;
 public class GameActivity extends AppCompatActivity {
     private final int LEFT = 0, CENTER_LEFT = 1, CENTER = 2, CENTER_RIGHT = 3, RIGHT = 4;
     private ImageView[][] game_IMG_dynamites;
+    private ImageView[][] game_IMG_nitros;
     private ImageView[] game_IMG_explosions;
     private ImageView[] game_IMG_car;
     private ImageView[] game_IMG_lives;
@@ -183,6 +184,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void initViews() {
         game_IMG_dynamites = new ImageView[11][5];
+        game_IMG_nitros = new ImageView[11][5];
         game_IMG_explosions = new ImageView[5];
         game_IMG_car = new ImageView[5];
         game_IMG_lives = new ImageView[3];
@@ -246,6 +248,66 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_dynamites[8][RIGHT] = findViewById(R.id.game_IMG_dynamite_right9);
         game_IMG_dynamites[9][RIGHT] = findViewById(R.id.game_IMG_dynamite_right10);
         game_IMG_dynamites[10][RIGHT] = findViewById(R.id.game_IMG_dynamite_right11);
+
+        game_IMG_nitros[0][LEFT] = findViewById(R.id.game_IMG_nitros_left1);
+        game_IMG_nitros[1][LEFT] = findViewById(R.id.game_IMG_nitros_left2);
+        game_IMG_nitros[2][LEFT] = findViewById(R.id.game_IMG_nitros_left3);
+        game_IMG_nitros[3][LEFT] = findViewById(R.id.game_IMG_nitros_left4);
+        game_IMG_nitros[4][LEFT] = findViewById(R.id.game_IMG_nitros_left5);
+        game_IMG_nitros[5][LEFT] = findViewById(R.id.game_IMG_nitros_left6);
+        game_IMG_nitros[6][LEFT] = findViewById(R.id.game_IMG_nitros_left7);
+        game_IMG_nitros[7][LEFT] = findViewById(R.id.game_IMG_nitros_left8);
+        game_IMG_nitros[8][LEFT] = findViewById(R.id.game_IMG_nitros_left9);
+        game_IMG_nitros[9][LEFT] = findViewById(R.id.game_IMG_nitros_left10);
+        game_IMG_nitros[10][LEFT] = findViewById(R.id.game_IMG_nitros_left11);
+
+        game_IMG_nitros[0][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left1);
+        game_IMG_nitros[1][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left2);
+        game_IMG_nitros[2][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left3);
+        game_IMG_nitros[3][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left4);
+        game_IMG_nitros[4][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left5);
+        game_IMG_nitros[5][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left6);
+        game_IMG_nitros[6][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left7);
+        game_IMG_nitros[7][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left8);
+        game_IMG_nitros[8][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left9);
+        game_IMG_nitros[9][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left10);
+        game_IMG_nitros[10][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left11);
+
+        game_IMG_nitros[0][CENTER] = findViewById(R.id.game_IMG_nitros_center1);
+        game_IMG_nitros[1][CENTER] = findViewById(R.id.game_IMG_nitros_center2);
+        game_IMG_nitros[2][CENTER] = findViewById(R.id.game_IMG_nitros_center3);
+        game_IMG_nitros[3][CENTER] = findViewById(R.id.game_IMG_nitros_center4);
+        game_IMG_nitros[4][CENTER] = findViewById(R.id.game_IMG_nitros_center5);
+        game_IMG_nitros[5][CENTER] = findViewById(R.id.game_IMG_nitros_center6);
+        game_IMG_nitros[6][CENTER] = findViewById(R.id.game_IMG_nitros_center7);
+        game_IMG_nitros[7][CENTER] = findViewById(R.id.game_IMG_nitros_center8);
+        game_IMG_nitros[8][CENTER] = findViewById(R.id.game_IMG_nitros_center9);
+        game_IMG_nitros[9][CENTER] = findViewById(R.id.game_IMG_nitros_center10);
+        game_IMG_nitros[10][CENTER] = findViewById(R.id.game_IMG_nitros_center11);
+
+        game_IMG_nitros[0][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right1);
+        game_IMG_nitros[1][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right2);
+        game_IMG_nitros[2][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right3);
+        game_IMG_nitros[3][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right4);
+        game_IMG_nitros[4][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right5);
+        game_IMG_nitros[5][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right6);
+        game_IMG_nitros[6][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right7);
+        game_IMG_nitros[7][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right8);
+        game_IMG_nitros[8][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right9);
+        game_IMG_nitros[9][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right10);
+        game_IMG_nitros[10][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right11);
+
+        game_IMG_nitros[0][RIGHT] = findViewById(R.id.game_IMG_nitros_right1);
+        game_IMG_nitros[1][RIGHT] = findViewById(R.id.game_IMG_nitros_right2);
+        game_IMG_nitros[2][RIGHT] = findViewById(R.id.game_IMG_nitros_right3);
+        game_IMG_nitros[3][RIGHT] = findViewById(R.id.game_IMG_nitros_right4);
+        game_IMG_nitros[4][RIGHT] = findViewById(R.id.game_IMG_nitros_right5);
+        game_IMG_nitros[5][RIGHT] = findViewById(R.id.game_IMG_nitros_right6);
+        game_IMG_nitros[6][RIGHT] = findViewById(R.id.game_IMG_nitros_right7);
+        game_IMG_nitros[7][RIGHT] = findViewById(R.id.game_IMG_nitros_right8);
+        game_IMG_nitros[8][RIGHT] = findViewById(R.id.game_IMG_nitros_right9);
+        game_IMG_nitros[9][RIGHT] = findViewById(R.id.game_IMG_nitros_right10);
+        game_IMG_nitros[10][RIGHT] = findViewById(R.id.game_IMG_nitros_right11);
 
         game_IMG_explosions[LEFT] = findViewById(R.id.game_IMG_explostion_left);
         game_IMG_explosions[CENTER_LEFT] = findViewById(R.id.game_IMG_explostion_center_left);
