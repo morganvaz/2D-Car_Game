@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity"
     android:orientation="horizontal"
-    android:background="@drawable/road1"
+    android:background="@drawable/road2"
     android:baselineAligned="false">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:orientation="vertical">
 
             <TextView
@@ -220,17 +220,36 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -253,7 +272,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
 
             <ImageButton
@@ -261,7 +280,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
                 android:backgroundTint="#009E9696"
                 app:srcCompat="@drawable/right_arrow" />
         </LinearLayout>
@@ -275,7 +293,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/game_LBL_score"
@@ -479,17 +497,36 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center_left11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -512,7 +549,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
         </LinearLayout>
     </LinearLayout>
@@ -523,7 +560,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:orientation="vertical">
         </LinearLayout>
         <LinearLayout
@@ -718,17 +755,36 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -750,7 +806,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
         </LinearLayout>
     </LinearLayout>
@@ -762,7 +818,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_heart1"
@@ -965,17 +1021,36 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center_right11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -998,7 +1073,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
         </LinearLayout>
     </LinearLayout>
@@ -1011,7 +1086,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:orientation="horizontal">
 
 <!--            <TextView-->
@@ -1228,17 +1303,36 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -1261,7 +1355,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
 
             <ImageButton
@@ -1269,7 +1363,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
                 android:backgroundTint="#009E9696"
                 app:srcCompat="@drawable/left_arrow" />
         </LinearLayout>

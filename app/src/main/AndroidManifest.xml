@@ -3,6 +3,7 @@
     package="com.example.hw1">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HW1">
+        <activity
+            android:name=".HighScoreActivity"
+            android:exported="false" />
         <activity
             android:name=".GameActivity"
             android:exported="true" />

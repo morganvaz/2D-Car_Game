@@ -29,7 +29,7 @@ public class GameActivity extends AppCompatActivity {
     private MediaPlayer explosionSound, gameOverSound, nitrosSound;
     private TextView game_LBL_score;
 
-    private static final int DELAY = 1000;
+    private static final int DELAY = 900;
     private int clock = 0;
     private Timer timer;
 
@@ -90,24 +90,24 @@ public class GameActivity extends AppCompatActivity {
 
     private void updateModels() {
         clock++;
-        score += clock;
+        score++;
         game_LBL_score.setText(String.valueOf(score));
         hideExplosions();
 
         for (int i = 0; i < 5; i++) {
-            if (game_IMG_dynamites[10][i].getVisibility() == View.VISIBLE) {
-                game_IMG_dynamites[10][i].setVisibility(View.GONE);
+            if (game_IMG_dynamites[11][i].getVisibility() == View.VISIBLE) {
+                game_IMG_dynamites[11][i].setVisibility(View.GONE);
             }
-            if (game_IMG_nitros[10][i].getVisibility() == View.VISIBLE) {
-                game_IMG_nitros[10][i].setVisibility(View.GONE);
+            if (game_IMG_nitros[11][i].getVisibility() == View.VISIBLE) {
+                game_IMG_nitros[11][i].setVisibility(View.GONE);
             }
-            for (int j = 10; j >= 0; j--) {
+            for (int j = 11; j >= 0; j--) {
                 if (game_IMG_dynamites[j][i].getVisibility() == View.VISIBLE) {
                     game_IMG_dynamites[j][i].setVisibility(View.GONE);
                     game_IMG_dynamites[j + 1][i].setVisibility(View.VISIBLE);
                 }
             }
-            for (int j = 10; j >= 0; j--) {
+            for (int j = 11; j >= 0; j--) {
                 if (game_IMG_nitros[j][i].getVisibility() == View.VISIBLE) {
                     game_IMG_nitros[j][i].setVisibility(View.GONE);
                     game_IMG_nitros[j + 1][i].setVisibility(View.VISIBLE);
@@ -179,9 +179,9 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void checkHit() {
-        if (game_IMG_dynamites[10][carPos].getVisibility() == View.VISIBLE
+        if (game_IMG_dynamites[11][carPos].getVisibility() == View.VISIBLE
                 && game_IMG_car[carPos].getVisibility() == View.VISIBLE) {
-            game_IMG_dynamites[10][carPos].setVisibility(View.GONE);
+            game_IMG_dynamites[11][carPos].setVisibility(View.GONE);
             game_IMG_car[carPos].setVisibility(View.GONE);
             game_IMG_explosions[carPos].setVisibility(View.VISIBLE);
             game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
@@ -189,9 +189,9 @@ public class GameActivity extends AppCompatActivity {
             vibrate();
             explosionSound.start();
         }
-        if (game_IMG_nitros[10][carPos].getVisibility() == View.VISIBLE
+        if (game_IMG_nitros[11][carPos].getVisibility() == View.VISIBLE
                 && game_IMG_car[carPos].getVisibility() == View.VISIBLE) {
-            game_IMG_nitros[10][carPos].setVisibility(View.GONE);
+            game_IMG_nitros[11][carPos].setVisibility(View.GONE);
             //game_IMG_explosions[carPos].setVisibility(View.VISIBLE); ### CONSIDER ADDING ANOTHER ICON FOR NITROS HIT ###
             toast(false);
             vibrate();
@@ -247,8 +247,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        game_IMG_dynamites = new ImageView[11][5];
-        game_IMG_nitros = new ImageView[11][5];
+        game_IMG_dynamites = new ImageView[12][5];
+        game_IMG_nitros = new ImageView[12][5];
         game_IMG_explosions = new ImageView[5];
         game_IMG_car = new ImageView[5];
         game_IMG_lives = new ImageView[3];
@@ -265,6 +265,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_dynamites[8][LEFT] = findViewById(R.id.game_IMG_dynamite_left9);
         game_IMG_dynamites[9][LEFT] = findViewById(R.id.game_IMG_dynamite_left10);
         game_IMG_dynamites[10][LEFT] = findViewById(R.id.game_IMG_dynamite_left11);
+        game_IMG_dynamites[11][LEFT] = findViewById(R.id.game_IMG_dynamite_left12);
 
         game_IMG_dynamites[0][CENTER_LEFT] = findViewById(R.id.game_IMG_dynamite_center_left1);
         game_IMG_dynamites[1][CENTER_LEFT] = findViewById(R.id.game_IMG_dynamite_center_left2);
@@ -277,6 +278,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_dynamites[8][CENTER_LEFT] = findViewById(R.id.game_IMG_dynamite_center_left9);
         game_IMG_dynamites[9][CENTER_LEFT] = findViewById(R.id.game_IMG_dynamite_center_left10);
         game_IMG_dynamites[10][CENTER_LEFT] = findViewById(R.id.game_IMG_dynamite_center_left11);
+        game_IMG_dynamites[11][CENTER_LEFT] = findViewById(R.id.game_IMG_dynamite_center_left12);
 
         game_IMG_dynamites[0][CENTER] = findViewById(R.id.game_IMG_dynamite_center1);
         game_IMG_dynamites[1][CENTER] = findViewById(R.id.game_IMG_dynamite_center2);
@@ -289,6 +291,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_dynamites[8][CENTER] = findViewById(R.id.game_IMG_dynamite_center9);
         game_IMG_dynamites[9][CENTER] = findViewById(R.id.game_IMG_dynamite_center10);
         game_IMG_dynamites[10][CENTER] = findViewById(R.id.game_IMG_dynamite_center11);
+        game_IMG_dynamites[11][CENTER] = findViewById(R.id.game_IMG_dynamite_center12);
 
         game_IMG_dynamites[0][CENTER_RIGHT] = findViewById(R.id.game_IMG_dynamite_center_right1);
         game_IMG_dynamites[1][CENTER_RIGHT] = findViewById(R.id.game_IMG_dynamite_center_right2);
@@ -301,6 +304,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_dynamites[8][CENTER_RIGHT] = findViewById(R.id.game_IMG_dynamite_center_right9);
         game_IMG_dynamites[9][CENTER_RIGHT] = findViewById(R.id.game_IMG_dynamite_center_right10);
         game_IMG_dynamites[10][CENTER_RIGHT] = findViewById(R.id.game_IMG_dynamite_center_right11);
+        game_IMG_dynamites[11][CENTER_RIGHT] = findViewById(R.id.game_IMG_dynamite_center_right12);
 
         game_IMG_dynamites[0][RIGHT] = findViewById(R.id.game_IMG_dynamite_right1);
         game_IMG_dynamites[1][RIGHT] = findViewById(R.id.game_IMG_dynamite_right2);
@@ -313,6 +317,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_dynamites[8][RIGHT] = findViewById(R.id.game_IMG_dynamite_right9);
         game_IMG_dynamites[9][RIGHT] = findViewById(R.id.game_IMG_dynamite_right10);
         game_IMG_dynamites[10][RIGHT] = findViewById(R.id.game_IMG_dynamite_right11);
+        game_IMG_dynamites[11][RIGHT] = findViewById(R.id.game_IMG_dynamite_right12);
 
         game_IMG_nitros[0][LEFT] = findViewById(R.id.game_IMG_nitros_left1);
         game_IMG_nitros[1][LEFT] = findViewById(R.id.game_IMG_nitros_left2);
@@ -325,6 +330,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_nitros[8][LEFT] = findViewById(R.id.game_IMG_nitros_left9);
         game_IMG_nitros[9][LEFT] = findViewById(R.id.game_IMG_nitros_left10);
         game_IMG_nitros[10][LEFT] = findViewById(R.id.game_IMG_nitros_left11);
+        game_IMG_nitros[11][LEFT] = findViewById(R.id.game_IMG_nitros_left12);
 
         game_IMG_nitros[0][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left1);
         game_IMG_nitros[1][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left2);
@@ -337,6 +343,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_nitros[8][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left9);
         game_IMG_nitros[9][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left10);
         game_IMG_nitros[10][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left11);
+        game_IMG_nitros[11][CENTER_LEFT] = findViewById(R.id.game_IMG_nitros_center_left12);
 
         game_IMG_nitros[0][CENTER] = findViewById(R.id.game_IMG_nitros_center1);
         game_IMG_nitros[1][CENTER] = findViewById(R.id.game_IMG_nitros_center2);
@@ -349,6 +356,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_nitros[8][CENTER] = findViewById(R.id.game_IMG_nitros_center9);
         game_IMG_nitros[9][CENTER] = findViewById(R.id.game_IMG_nitros_center10);
         game_IMG_nitros[10][CENTER] = findViewById(R.id.game_IMG_nitros_center11);
+        game_IMG_nitros[11][CENTER] = findViewById(R.id.game_IMG_nitros_center12);
 
         game_IMG_nitros[0][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right1);
         game_IMG_nitros[1][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right2);
@@ -361,6 +369,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_nitros[8][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right9);
         game_IMG_nitros[9][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right10);
         game_IMG_nitros[10][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right11);
+        game_IMG_nitros[11][CENTER_RIGHT] = findViewById(R.id.game_IMG_nitros_center_right12);
 
         game_IMG_nitros[0][RIGHT] = findViewById(R.id.game_IMG_nitros_right1);
         game_IMG_nitros[1][RIGHT] = findViewById(R.id.game_IMG_nitros_right2);
@@ -373,6 +382,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_nitros[8][RIGHT] = findViewById(R.id.game_IMG_nitros_right9);
         game_IMG_nitros[9][RIGHT] = findViewById(R.id.game_IMG_nitros_right10);
         game_IMG_nitros[10][RIGHT] = findViewById(R.id.game_IMG_nitros_right11);
+        game_IMG_nitros[11][RIGHT] = findViewById(R.id.game_IMG_nitros_right12);
 
         game_IMG_explosions[LEFT] = findViewById(R.id.game_IMG_explostion_left);
         game_IMG_explosions[CENTER_LEFT] = findViewById(R.id.game_IMG_explostion_center_left);
