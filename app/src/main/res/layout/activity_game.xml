@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left1"
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left2"
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left3"
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left4"
@@ -104,7 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left5"
@@ -123,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left6"
@@ -142,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left7"
@@ -161,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left8"
@@ -180,7 +180,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left9"
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_left10"
@@ -278,7 +278,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left1"
@@ -297,7 +297,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left2"
@@ -316,7 +316,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left3"
@@ -335,7 +335,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left4"
@@ -354,7 +354,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left5"
@@ -373,7 +373,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left6"
@@ -392,7 +392,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left7"
@@ -411,7 +411,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left8"
@@ -430,7 +430,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left9"
@@ -449,7 +449,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_left10"
@@ -517,7 +517,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center1"
@@ -536,7 +536,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center2"
@@ -555,7 +555,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center3"
@@ -574,7 +574,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center4"
@@ -593,7 +593,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center5"
@@ -612,7 +612,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center6"
@@ -631,7 +631,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center7"
@@ -650,7 +650,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center8"
@@ -669,7 +669,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center9"
@@ -688,7 +688,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center10"
@@ -764,7 +764,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right1"
@@ -783,7 +783,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right2"
@@ -802,7 +802,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right3"
@@ -821,7 +821,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right4"
@@ -840,7 +840,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right5"
@@ -859,7 +859,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right6"
@@ -878,7 +878,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right7"
@@ -897,7 +897,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right8"
@@ -916,7 +916,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right9"
@@ -935,7 +935,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_center_right10"
@@ -1027,7 +1027,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right1"
@@ -1046,7 +1046,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right2"
@@ -1065,7 +1065,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right3"
@@ -1084,7 +1084,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right4"
@@ -1103,7 +1103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right5"
@@ -1122,7 +1122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right6"
@@ -1141,7 +1141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right7"
@@ -1160,7 +1160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right8"
@@ -1179,7 +1179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right9"
@@ -1198,7 +1198,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
             <ImageView
                 android:id="@+id/game_IMG_nitros_right10"

@@ -1,6 +1,7 @@
 package com.example.hw1;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -22,9 +23,9 @@ public class GameActivity extends AppCompatActivity {
     private ImageView[] game_IMG_explosions;
     private ImageView[] game_IMG_car;
     private ImageView[] game_IMG_lives;
-    private int lifeCount = 2;
     private ImageButton leftArrow, rightArrow;
-    private int carPos = CENTER;
+    private int lifeCount = 2, carPos = CENTER, dynamiteLane;
+    private MediaPlayer explosionSound, gameOverSound, nitrosSound;
 
     private static final int DELAY = 1000;
     private int clock = 0;
@@ -36,6 +37,9 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         hideSystemUI();
         initViews();
+        explosionSound = MediaPlayer.create(this, R.raw.explosion_sound);
+        gameOverSound = MediaPlayer.create(this, R.raw.game_over_sound);
+        nitrosSound = MediaPlayer.create(this, R.raw.nitros_sound);
 
         rightArrow.setOnClickListener(v -> {
             if (carPos < RIGHT) {
@@ -76,47 +80,87 @@ public class GameActivity extends AppCompatActivity {
                 Log.d("timeTick", "Tick: " + clock + " On Thread: " + Thread.currentThread().getName());
                 runOnUiThread(() -> {
                     Log.d("timeTick", "Tick: " + clock + " On Thread: " + Thread.currentThread().getName());
-                    updateDynamite();
+                    updateModels();
                 });
             }
         }, 0, DELAY);
     }
 
-    private void updateDynamite() {
+    private void updateModels() {
         clock++;
         hideExplosions();
         for (int i = 0; i < 5; i++) {
             if (game_IMG_dynamites[10][i].getVisibility() == View.VISIBLE) {
                 game_IMG_dynamites[10][i].setVisibility(View.GONE);
             }
+            if (game_IMG_nitros[10][i].getVisibility() == View.VISIBLE) {
+                game_IMG_nitros[10][i].setVisibility(View.GONE);
+            }
             for (int j = 10; j >= 0; j--) {
                 if (game_IMG_dynamites[j][i].getVisibility() == View.VISIBLE) {
-                    game_IMG_dynamites[j][i].setVisibility(View.INVISIBLE);
+                    game_IMG_dynamites[j][i].setVisibility(View.GONE);
                     game_IMG_dynamites[j + 1][i].setVisibility(View.VISIBLE);
                 }
             }
-        }
-        if (clock % 2 == 0) {
-            int lane = getDynamiteRandomLane();
-            switch (lane) {
-                case LEFT:
-                    game_IMG_dynamites[0][LEFT].setVisibility(View.VISIBLE);
-                    break;
-                case CENTER_LEFT:
-                    game_IMG_dynamites[0][CENTER_LEFT].setVisibility(View.VISIBLE);
-                    break;
-                case CENTER:
-                    game_IMG_dynamites[0][CENTER].setVisibility(View.VISIBLE);
-                    break;
-                case CENTER_RIGHT:
-                    game_IMG_dynamites[0][CENTER_RIGHT].setVisibility(View.VISIBLE);
-                    break;
-                case RIGHT:
-                    game_IMG_dynamites[0][RIGHT].setVisibility(View.VISIBLE);
-                    break;
+            for (int j = 10; j >= 0; j--) {
+                if (game_IMG_nitros[j][i].getVisibility() == View.VISIBLE) {
+                    game_IMG_nitros[j][i].setVisibility(View.GONE);
+                    game_IMG_nitros[j + 1][i].setVisibility(View.VISIBLE);
+                }
             }
         }
+        if (clock % 2 == 0)
+            placeDynamiteInLane();
+
+        if(clock % 5 == 0)
+            placeNitrosInLane();
+
        checkHit();
+    }
+
+    private void placeNitrosInLane() {
+        int nitrosLane = getRandomLane();
+        while (nitrosLane == dynamiteLane)
+            nitrosLane = getRandomLane();
+
+        switch (nitrosLane) {
+            case LEFT:
+                game_IMG_nitros[0][LEFT].setVisibility(View.VISIBLE);
+                break;
+            case CENTER_LEFT:
+                game_IMG_nitros[0][CENTER_LEFT].setVisibility(View.VISIBLE);
+                break;
+            case CENTER:
+                game_IMG_nitros[0][CENTER].setVisibility(View.VISIBLE);
+                break;
+            case CENTER_RIGHT:
+                game_IMG_nitros[0][CENTER_RIGHT].setVisibility(View.VISIBLE);
+                break;
+            case RIGHT:
+                game_IMG_nitros[0][RIGHT].setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
+    private void placeDynamiteInLane() {
+        dynamiteLane = getRandomLane();
+        switch (dynamiteLane) {
+            case LEFT:
+                game_IMG_dynamites[0][LEFT].setVisibility(View.VISIBLE);
+                break;
+            case CENTER_LEFT:
+                game_IMG_dynamites[0][CENTER_LEFT].setVisibility(View.VISIBLE);
+                break;
+            case CENTER:
+                game_IMG_dynamites[0][CENTER].setVisibility(View.VISIBLE);
+                break;
+            case CENTER_RIGHT:
+                game_IMG_dynamites[0][CENTER_RIGHT].setVisibility(View.VISIBLE);
+                break;
+            case RIGHT:
+                game_IMG_dynamites[0][RIGHT].setVisibility(View.VISIBLE);
+                break;
+        }
     }
 
     private void hideExplosions() {
@@ -135,28 +179,41 @@ public class GameActivity extends AppCompatActivity {
             game_IMG_car[carPos].setVisibility(View.GONE);
             game_IMG_explosions[carPos].setVisibility(View.VISIBLE);
             game_IMG_lives[lifeCount--].setVisibility(View.INVISIBLE);
-            toast();
+            toast(true);
             vibrate();
+            explosionSound.start();
+        }
+        if (game_IMG_nitros[10][carPos].getVisibility() == View.VISIBLE
+                && game_IMG_car[carPos].getVisibility() == View.VISIBLE) {
+            game_IMG_nitros[10][carPos].setVisibility(View.GONE);
+            //game_IMG_explosions[carPos].setVisibility(View.VISIBLE); ### CONSIDER ADDING ANOTHER ICON FOR NITROS HIT ###
+            toast(false);
+            vibrate();
+            nitrosSound.start();
         }
 
     }
 
-    private void toast() {
-        switch(lifeCount){
-            case 1:
-                Toast.makeText(this, "2 more lives to go!", Toast.LENGTH_LONG).show();
-                break;
-            case 0:
-                Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
-                break;
-            case -1:
-                Toast.makeText(this, "##  Restarting Game  ## ", Toast.LENGTH_LONG).show();
-                restartGame();
-                break;
-        }
+    private void toast(boolean dynamite) {
+        if (dynamite){
+            switch(lifeCount){
+                case 1:
+                    Toast.makeText(this, "2 more lives to go!", Toast.LENGTH_LONG).show();
+                    break;
+                case 0:
+                    Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
+                    break;
+                case -1:
+                    Toast.makeText(this, "##  Restarting Game  ## ", Toast.LENGTH_LONG).show();
+                    restartGame();
+                    break;
+            }
+        } else
+            Toast.makeText(this, " #### Bonus Nitros #### ", Toast.LENGTH_LONG).show();
     }
 
     private void restartGame() {
+        gameOverSound.start();
         lifeCount = 2;
         game_IMG_lives[0].setVisibility(View.VISIBLE);
         game_IMG_lives[1].setVisibility(View.VISIBLE);
@@ -168,7 +225,7 @@ public class GameActivity extends AppCompatActivity {
         v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
     }
 
-    private int getDynamiteRandomLane() {
+    private int getRandomLane() {
         return (int) (Math.random()*(RIGHT+1-LEFT)) + LEFT;
     }
 
