@@ -18,6 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Score:" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -268,6 +277,15 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/game_LBL_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:text="----" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

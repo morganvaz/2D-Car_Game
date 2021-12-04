@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +25,9 @@ public class GameActivity extends AppCompatActivity {
     private ImageView[] game_IMG_car;
     private ImageView[] game_IMG_lives;
     private ImageButton leftArrow, rightArrow;
-    private int lifeCount = 2, carPos = CENTER, dynamiteLane;
+    private int lifeCount = 2, carPos = CENTER, dynamiteLane, score = 0;
     private MediaPlayer explosionSound, gameOverSound, nitrosSound;
+    private TextView game_LBL_score;
 
     private static final int DELAY = 1000;
     private int clock = 0;
@@ -88,7 +90,10 @@ public class GameActivity extends AppCompatActivity {
 
     private void updateModels() {
         clock++;
+        score += clock;
+        game_LBL_score.setText(String.valueOf(score));
         hideExplosions();
+
         for (int i = 0; i < 5; i++) {
             if (game_IMG_dynamites[10][i].getVisibility() == View.VISIBLE) {
                 game_IMG_dynamites[10][i].setVisibility(View.GONE);
@@ -112,10 +117,11 @@ public class GameActivity extends AppCompatActivity {
         if (clock % 2 == 0)
             placeDynamiteInLane();
 
-        if(clock % 5 == 0)
+        if (clock % 5 == 0)
             placeNitrosInLane();
 
-       checkHit();
+        checkHit();
+
     }
 
     private void placeNitrosInLane() {
@@ -190,6 +196,7 @@ public class GameActivity extends AppCompatActivity {
             toast(false);
             vibrate();
             nitrosSound.start();
+            score += 1000;
         }
 
     }
@@ -209,7 +216,7 @@ public class GameActivity extends AppCompatActivity {
                     break;
             }
         } else
-            Toast.makeText(this, " #### Bonus Nitros #### ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " !!! Nitros BOOST +1000 !!! ", Toast.LENGTH_LONG).show();
     }
 
     private void restartGame() {
@@ -245,6 +252,7 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_explosions = new ImageView[5];
         game_IMG_car = new ImageView[5];
         game_IMG_lives = new ImageView[3];
+        game_LBL_score = findViewById(R.id.game_LBL_score);
 
         game_IMG_dynamites[0][LEFT] = findViewById(R.id.game_IMG_dynamite_left1);
         game_IMG_dynamites[1][LEFT] = findViewById(R.id.game_IMG_dynamite_left2);
