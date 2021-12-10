@@ -1,6 +1,12 @@
 package com.example.hw1;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -13,6 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.example.hw1.Models.Record;
+import com.google.gson.Gson;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -33,15 +44,20 @@ public class GameActivity extends AppCompatActivity {
     private int clock = 0;
     private Timer timer;
 
+    private MyDB myDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         hideSystemUI();
         initViews();
-        explosionSound = MediaPlayer.create(this, R.raw.explosion_sound);
-        gameOverSound = MediaPlayer.create(this, R.raw.game_over_sound);
-        nitrosSound = MediaPlayer.create(this, R.raw.nitros_sound);
+        initSounds();
+
+        String fromJSON = MSPv3.getInstance(this).getStringSP("MY_DB", "");
+        myDB = new Gson().fromJson(fromJSON, MyDB.class);
+        if (myDB == null)   // MAYBE USELESS?
+            myDB = new MyDB();
 
         rightArrow.setOnClickListener(v -> {
             if (carPos < RIGHT) {
@@ -58,6 +74,8 @@ public class GameActivity extends AppCompatActivity {
             }
         });
     }
+
+
     private void updateUI() {
         startTicker();
     }
@@ -202,8 +220,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void toast(boolean dynamite) {
-        if (dynamite){
-            switch(lifeCount){
+        if (dynamite) {
+            switch (lifeCount) {
                 case 1:
                     Toast.makeText(this, "2 more lives to go!", Toast.LENGTH_LONG).show();
                     break;
@@ -211,20 +229,41 @@ public class GameActivity extends AppCompatActivity {
                     Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
                     break;
                 case -1:
-                    Toast.makeText(this, "##  Restarting Game  ## ", Toast.LENGTH_LONG).show();
-                    restartGame();
+                    Toast.makeText(this, "###  GAME OVER  ### ", Toast.LENGTH_LONG).show();
+                    gameOver();
                     break;
             }
         } else
             Toast.makeText(this, " !!! Nitros BOOST +1000 !!! ", Toast.LENGTH_LONG).show();
     }
 
-    private void restartGame() {
+    private void gameOver() {
         gameOverSound.start();
-        lifeCount = 2;
-        game_IMG_lives[0].setVisibility(View.VISIBLE);
-        game_IMG_lives[1].setVisibility(View.VISIBLE);
-        game_IMG_lives[2].setVisibility(View.VISIBLE);
+        timer.cancel();
+        Record record = new Record();
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        @SuppressLint("MissingPermission") Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (myDB.getRecords().size() == 0) {
+            record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
+            myDB.getRecords().add(record);
+        }
+        else if (myDB.getRecords().size() <= 10) {
+            record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
+            myDB.getRecords().add(record);
+        } else if (myDB.getRecords().get(myDB.getRecords().size() - 1).getScore() < score) {
+            record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
+            myDB.getRecords().set(myDB.getRecords().size() - 1, record);
+        }
+        myDB.sortRecords();
+
+        Intent intent = new Intent(this, HighScoreActivity.class);
+        Bundle bundle = new Bundle();
+        String json = new Gson().toJson(myDB);
+        bundle.putString("myDB", json);
+        intent.putExtra("myDB", bundle);
+        MSPv3.getInstance(this).putStringSP("MY_DB", json);
+        finish();
+        startActivity(intent);
     }
 
     private void vibrate() {
@@ -401,6 +440,12 @@ public class GameActivity extends AppCompatActivity {
         game_IMG_lives[0] = findViewById(R.id.game_IMG_heart1);
         game_IMG_lives[1] = findViewById(R.id.game_IMG_heart2);
         game_IMG_lives[2] = findViewById(R.id.game_IMG_heart3);
+    }
+
+    private void initSounds() {
+        explosionSound = MediaPlayer.create(this, R.raw.explosion_sound);
+        gameOverSound = MediaPlayer.create(this, R.raw.game_over_sound);
+        nitrosSound = MediaPlayer.create(this, R.raw.nitros_sound);
     }
 
     public void hideSystemUI() {
