@@ -53,7 +53,7 @@ public class GameActivity extends AppCompatActivity {
     // score text
     private TextView game_LBL_score;
     //timer
-    private static final int DELAY = 750;
+    private static final int DELAY = 700;
     private int clock = 0;
     private Timer timer;
     // DB
