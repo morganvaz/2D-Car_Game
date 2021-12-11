@@ -1,5 +1,7 @@
 package com.example.hw1.Models;
-public class Record implements Comparable {
+
+
+public class Record implements Comparable<Record> {
     //    private String name ="";
     private int score = 0;
     private double lat = 0.0;
@@ -50,8 +52,8 @@ public class Record implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Record r = (Record) o;
+    public int compareTo(Record r) {
         return r.getScore() - this.getScore();
     }
+
 }

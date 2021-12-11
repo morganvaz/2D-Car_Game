@@ -1,10 +1,8 @@
 package com.example.hw1;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
@@ -19,8 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.example.hw1.Models.Record;
 import com.google.gson.Gson;
@@ -43,7 +39,6 @@ public class GameActivity extends AppCompatActivity {
     private static final int DELAY = 900;
     private int clock = 0;
     private Timer timer;
-
     private MyDB myDB;
 
     @Override
@@ -210,7 +205,6 @@ public class GameActivity extends AppCompatActivity {
         if (game_IMG_nitros[11][carPos].getVisibility() == View.VISIBLE
                 && game_IMG_car[carPos].getVisibility() == View.VISIBLE) {
             game_IMG_nitros[11][carPos].setVisibility(View.GONE);
-            //game_IMG_explosions[carPos].setVisibility(View.VISIBLE); ### CONSIDER ADDING ANOTHER ICON FOR NITROS HIT ###
             toast(false);
             vibrate();
             nitrosSound.start();
@@ -224,13 +218,13 @@ public class GameActivity extends AppCompatActivity {
             switch (lifeCount) {
                 case 1:
                     Toast.makeText(this, "2 more lives to go!", Toast.LENGTH_LONG).show();
+                    gameOver();
                     break;
                 case 0:
                     Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
                     break;
                 case -1:
                     Toast.makeText(this, "###  GAME OVER  ### ", Toast.LENGTH_LONG).show();
-                    gameOver();
                     break;
             }
         } else
