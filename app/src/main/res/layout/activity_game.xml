@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity"
+    tools:context=".Activities.GameActivity"
     android:orientation="horizontal"
-    android:background="@drawable/road1"
+    android:background="@drawable/road2"
     android:baselineAligned="false">
 
     <LinearLayout
@@ -16,80 +16,245 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Score:" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_left6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_left12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_left12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
             <ImageView
                 android:id="@+id/game_IMG_explostion_left"
                 android:layout_width="match_parent"
@@ -107,7 +272,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
 
             <ImageButton
@@ -115,7 +280,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
                 android:backgroundTint="#009E9696"
                 app:srcCompat="@drawable/right_arrow" />
         </LinearLayout>
@@ -129,81 +293,503 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/game_LBL_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:text="----" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_left12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_left12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+            <ImageView
+                android:id="@+id/game_IMG_explostion_center_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/explosion" />
+            <ImageView
+                android:id="@+id/game_IMG_car_center_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/yellow_car" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="vertical">
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:orientation="vertical">
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
-
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_center6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
             <ImageView
                 android:id="@+id/game_IMG_explostion_center"
                 android:layout_width="match_parent"
@@ -220,7 +806,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
         </LinearLayout>
     </LinearLayout>
@@ -232,7 +818,275 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_heart1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_gravity="right"
+                android:padding="1dp"
+                app:srcCompat="@drawable/orange_heart" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_center_right12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_center_right12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+            <ImageView
+                android:id="@+id/game_IMG_explostion_center_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/explosion" />
+            <ImageView
+                android:id="@+id/game_IMG_car_center_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/yellow_car" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:orientation="vertical">
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:orientation="horizontal">
 
 <!--            <TextView-->
@@ -243,94 +1097,247 @@
 <!--                android:textColor="#FFFFFF"-->
 <!--                android:textSize="16sp" />-->
 
-            <ImageView
-                android:id="@+id/game_IMG_heart1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                app:srcCompat="@drawable/orange_heart" />
+
             <ImageView
                 android:id="@+id/game_IMG_heart2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="1dp"
                 app:srcCompat="@drawable/orange_heart" />
             <ImageView
                 android:id="@+id/game_IMG_heart3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="1dp"
                 app:srcCompat="@drawable/orange_heart" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="50dp"
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/game_IMG_dynamite_right6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/game_IMG_dynamite_right12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 app:srcCompat="@drawable/dynamite" />
+            <ImageView
+                android:id="@+id/game_IMG_nitros_right12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/nos_v2" />
             <ImageView
                 android:id="@+id/game_IMG_explostion_right"
                 android:layout_width="match_parent"
@@ -348,7 +1355,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="85dp"
             android:orientation="vertical">
 
             <ImageButton
@@ -356,7 +1363,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
                 android:backgroundTint="#009E9696"
                 app:srcCompat="@drawable/left_arrow" />
         </LinearLayout>
