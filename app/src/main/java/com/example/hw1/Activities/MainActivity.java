@@ -27,21 +27,20 @@ public class MainActivity extends AppCompatActivity {
         // ask location permission
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED ||
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},0);
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},101);
         }
 
         startGame = findViewById(R.id.main_BTN_startGame);
         gameMode = findViewById(R.id.main_TGL_gameMode);
 
+        Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (gameMode.isChecked()) {
-                    Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
                     gameIntent.putExtra(GAME_MODE,"Sensors");
                     startActivity(gameIntent);
                 } else {
-                    Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
                     gameIntent.putExtra(GAME_MODE,"Arrows");
                     startActivity(gameIntent);
                 }

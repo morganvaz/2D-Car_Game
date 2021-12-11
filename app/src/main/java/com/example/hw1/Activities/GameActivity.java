@@ -62,6 +62,7 @@ public class GameActivity extends AppCompatActivity {
     private SensorManager sensorManager;
     private Sensor sensor;
     private SensorEventListener accSensorEventListener;
+    private String gameMode = "";
     public enum DirectionAction { LEFT,RIGHT }
     // location
     private LocationManager locationManager;
@@ -75,7 +76,6 @@ public class GameActivity extends AppCompatActivity {
         hideSystemUI();
         initViews();
         initSounds();
-        initSensor();
         // initiate DB
         String fromJSON = MSPv3.getInstance(this).getStringSP("MY_DB", "");
         myDB = new Gson().fromJson(fromJSON, MyDB.class);
@@ -84,7 +84,7 @@ public class GameActivity extends AppCompatActivity {
         // Set game mode
         if (getIntent() != null){
             Intent intent = getIntent();
-            String gameMode = intent.getStringExtra(GAME_MODE);
+            gameMode = intent.getStringExtra(GAME_MODE);
             if(gameMode.equals("Sensors")){
                 initSensor();
                 accSensorEventListener = new SensorEventListener() {
@@ -523,7 +523,8 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(accSensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        if(gameMode.equals("Sensors"))
+            sensorManager.registerListener(accSensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
         hideSystemUI();
     }
 
@@ -536,7 +537,8 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        sensorManager.unregisterListener(accSensorEventListener);
+        if(gameMode.equals("Sensors"))
+            sensorManager.unregisterListener(accSensorEventListener);
     }
 
     public void hideSystemUI() {
