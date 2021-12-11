@@ -24,9 +24,12 @@
         android:layout_weight="1"
         android:background="#D3000000" />
 
-    <View
+    <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
-        android:layout_height="70dp" />
+        android:layout_height="wrap_content"
+        android:text="@string/return_to_main"
+        android:id="@+id/highscore_BTN_returnToMain"
+        android:backgroundTint="#1B0095"/>
 
     <FrameLayout
         android:id="@+id/map_frame"

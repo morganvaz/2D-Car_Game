@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HW1</string>
+    <string name="app_name">HW2</string>
     <string name="start_game">Start Game</string>
     <string name="main_page_headline">Don\'t Explode The Car !</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -9,4 +9,5 @@
     <string name="arrows_mode">Arrows Mode</string>
     <string name="sensors_mode">Sensors Mode</string>
     <string name="highscores">HighScores</string>
+    <string name="return_to_main">Return To Main Screen</string>
 </resources>

@@ -53,7 +53,7 @@ public class GameActivity extends AppCompatActivity {
     // score text
     private TextView game_LBL_score;
     //timer
-    private static final int DELAY = 900;
+    private static final int DELAY = 750;
     private int clock = 0;
     private Timer timer;
     // DB
@@ -114,18 +114,10 @@ public class GameActivity extends AppCompatActivity {
 
     private void startTicker() {
         timer = new Timer();
-        setTimerRate();
-    }
-
-    private void setTimerRate() {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                Log.d("timeTick", "Tick: " + clock + " On Thread: " + Thread.currentThread().getName());
-                runOnUiThread(() -> {
-                    Log.d("timeTick", "Tick: " + clock + " On Thread: " + Thread.currentThread().getName());
-                    updateModels();
-                });
+                runOnUiThread(() -> updateModels());
             }
         }, 0, DELAY);
     }
@@ -247,13 +239,13 @@ public class GameActivity extends AppCompatActivity {
             switch (lifeCount) {
                 case 1:
                     Toast.makeText(this, "2 more lives to go!", Toast.LENGTH_LONG).show();
-                    gameOver();
                     break;
                 case 0:
                     Toast.makeText(this, "LAST LIFE!", Toast.LENGTH_LONG).show();
                     break;
                 case -1:
                     Toast.makeText(this, "###  GAME OVER  ### ", Toast.LENGTH_LONG).show();
+                    gameOver();
                     break;
             }
         } else
@@ -272,7 +264,7 @@ public class GameActivity extends AppCompatActivity {
         }
         // Set location
         location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
+        // check if current score should enter to the highscore list
         if (myDB.getRecords().size() == 0) {
             record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
             myDB.getRecords().add(record);

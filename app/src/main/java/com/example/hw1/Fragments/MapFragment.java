@@ -42,7 +42,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         LatLng mark = new LatLng(32.068989, 34.827435);
         map.addMarker(new MarkerOptions().position(mark).title("I am here"));
         map.moveCamera(CameraUpdateFactory.newLatLng(mark));
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(mark, 10.0f));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(mark, 15.0f));
     }
 
     private void moveCameraByRecord (Record record) {
@@ -50,7 +50,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(mark).title("I am here"));
         map.moveCamera(CameraUpdateFactory.
                 newLatLngZoom(mark,1));
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(record.getLat(), record.getLon()), 10.0f));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(record.getLat(), record.getLon()), 15.0f));
     }
 
     public void onClicked(Record record) {

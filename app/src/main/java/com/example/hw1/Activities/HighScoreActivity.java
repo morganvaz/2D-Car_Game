@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.hw1.CallBacks.CallBack_List;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 public class HighScoreActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -27,6 +29,7 @@ public class HighScoreActivity extends AppCompatActivity implements OnMapReadyCa
     private MapFragment mapFragment;
     private TextView info;
     private GoogleMap map;
+    private MaterialButton returnToMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,14 @@ public class HighScoreActivity extends AppCompatActivity implements OnMapReadyCa
         mapFragment = new MapFragment();
         mapFragment.setCallBackMap(callBack_map);
         getSupportFragmentManager().beginTransaction().add(R.id.map_frame, mapFragment).commit();
+
+        returnToMain = findViewById(R.id.highscore_BTN_returnToMain);
+        returnToMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HighScoreActivity.this, MainActivity.class));
+            }
+        });
 
     }
 
