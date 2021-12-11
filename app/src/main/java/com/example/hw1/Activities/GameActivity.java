@@ -114,6 +114,10 @@ public class GameActivity extends AppCompatActivity {
 
     private void startTicker() {
         timer = new Timer();
+        setTimerRate();
+    }
+
+    private void setTimerRate() {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {

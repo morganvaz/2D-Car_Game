@@ -8,4 +8,5 @@
     <string name="noRecord">No record yet</string>
     <string name="arrows_mode">Arrows Mode</string>
     <string name="sensors_mode">Sensors Mode</string>
+    <string name="highscores">HighScores</string>
 </resources>

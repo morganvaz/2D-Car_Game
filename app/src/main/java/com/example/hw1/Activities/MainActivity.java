@@ -16,6 +16,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 public class MainActivity extends AppCompatActivity {
 
     private MaterialButton startGame;
+    private MaterialButton highScores;
     private SwitchMaterial gameMode;
     public static final String GAME_MODE = "GAME_MODE";
 
@@ -37,13 +38,19 @@ public class MainActivity extends AppCompatActivity {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (gameMode.isChecked()) {
+                if (gameMode.isChecked())
                     gameIntent.putExtra(GAME_MODE,"Sensors");
-                    startActivity(gameIntent);
-                } else {
+                 else
                     gameIntent.putExtra(GAME_MODE,"Arrows");
-                    startActivity(gameIntent);
-                }
+
+                startActivity(gameIntent);
+            }
+        });
+        highScores = findViewById(R.id.main_BTN_highScores);
+        highScores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HighScoreActivity.class));
             }
         });
     }
