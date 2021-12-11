@@ -6,4 +6,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Highscore_Title">HighScores Table</string>
     <string name="noRecord">No record yet</string>
+    <string name="arrows_mode">Arrows Mode</string>
+    <string name="sensors_mode">Sensors Mode</string>
 </resources>

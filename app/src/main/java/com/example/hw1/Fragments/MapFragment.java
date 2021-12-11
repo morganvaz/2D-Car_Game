@@ -54,7 +54,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public void onClicked(Record record) {
-        if(record != null)
-            moveCameraByRecord(record);
+        moveCameraByRecord(record);
     }
 }

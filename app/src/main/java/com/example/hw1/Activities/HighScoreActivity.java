@@ -1,4 +1,4 @@
-package com.example.hw1;
+package com.example.hw1.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,10 @@ import com.example.hw1.CallBacks.CallBack_List;
 import com.example.hw1.CallBacks.CallBack_Map;
 import com.example.hw1.Fragments.ListFragment;
 import com.example.hw1.Fragments.MapFragment;
+import com.example.hw1.Database.MSPv3;
 import com.example.hw1.Models.Record;
+import com.example.hw1.Database.MyDB;
+import com.example.hw1.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

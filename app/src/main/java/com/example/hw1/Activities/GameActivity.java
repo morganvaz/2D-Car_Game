@@ -1,8 +1,15 @@
-package com.example.hw1;
+package com.example.hw1.Activities;
 
-import android.annotation.SuppressLint;
+import static com.example.hw1.Activities.MainActivity.GAME_MODE;
+
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
@@ -17,29 +24,49 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import com.example.hw1.Database.MSPv3;
 import com.example.hw1.Models.Record;
+import com.example.hw1.Database.MyDB;
+import com.example.hw1.R;
 import com.google.gson.Gson;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameActivity extends AppCompatActivity {
+    // view position
     private final int LEFT = 0, CENTER_LEFT = 1, CENTER = 2, CENTER_RIGHT = 3, RIGHT = 4;
+    // game views
     private ImageView[][] game_IMG_dynamites;
     private ImageView[][] game_IMG_nitros;
     private ImageView[] game_IMG_explosions;
     private ImageView[] game_IMG_car;
     private ImageView[] game_IMG_lives;
     private ImageButton leftArrow, rightArrow;
-    private int lifeCount = 2, carPos = CENTER, dynamiteLane, score = 0;
+    // views info
+    private int lifeCount = 2, carPos = CENTER, dynamiteLane;
+    private long score = 0;
+    // sounds
     private MediaPlayer explosionSound, gameOverSound, nitrosSound;
+    // score text
     private TextView game_LBL_score;
-
+    //timer
     private static final int DELAY = 900;
     private int clock = 0;
     private Timer timer;
+    // DB
     private MyDB myDB;
+    // sensors
+    private SensorManager sensorManager;
+    private Sensor sensor;
+    private SensorEventListener accSensorEventListener;
+    public enum DirectionAction { LEFT,RIGHT }
+    // location
+    private LocationManager locationManager;
+    private Location location;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,43 +75,41 @@ public class GameActivity extends AppCompatActivity {
         hideSystemUI();
         initViews();
         initSounds();
-
+        initSensor();
+        // initiate DB
         String fromJSON = MSPv3.getInstance(this).getStringSP("MY_DB", "");
         myDB = new Gson().fromJson(fromJSON, MyDB.class);
         if (myDB == null)   // MAYBE USELESS?
             myDB = new MyDB();
-
-        rightArrow.setOnClickListener(v -> {
-            if (carPos < RIGHT) {
-                game_IMG_car[carPos].setVisibility(View.INVISIBLE);
-                game_IMG_car[++carPos].setVisibility(View.VISIBLE);
-                checkHit();
+        // Set game mode
+        if (getIntent() != null){
+            Intent intent = getIntent();
+            String gameMode = intent.getStringExtra(GAME_MODE);
+            if(gameMode.equals("Sensors")){
+                initSensor();
+                accSensorEventListener = new SensorEventListener() {
+                    @Override
+                    public void onSensorChanged(SensorEvent event) {
+                        float x = event.values[0];
+                        if (x <= -0.5) {
+                            DirectionAction action = DirectionAction.LEFT;
+                            moveCarBySensors(action);
+                        } else if (x >= 0.5) {
+                            DirectionAction action = DirectionAction.RIGHT;
+                            moveCarBySensors(action);
+                        }
+                    }
+                    @Override
+                    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+                    }
+                };
+                leftArrow.setVisibility(View.INVISIBLE);
+                rightArrow.setVisibility(View.INVISIBLE);
+            } else {  // Arrows game mode
+                setArrowsListeners();
             }
-        });
-        leftArrow.setOnClickListener(v -> {
-            if (carPos > LEFT) {
-                game_IMG_car[carPos].setVisibility(View.INVISIBLE);
-                game_IMG_car[--carPos].setVisibility(View.VISIBLE);
-                checkHit();
-            }
-        });
-    }
-
-
-    private void updateUI() {
-        startTicker();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        updateUI();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        hideSystemUI();
+        }
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     }
 
     private void startTicker() {
@@ -235,8 +260,15 @@ public class GameActivity extends AppCompatActivity {
         gameOverSound.start();
         timer.cancel();
         Record record = new Record();
-        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        @SuppressLint("MissingPermission") Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        // Ask location permission
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        // Set location
+        location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
         if (myDB.getRecords().size() == 0) {
             record.setScore(score).setLat(location.getLatitude()).setLon(location.getLongitude());
             myDB.getRecords().add(record);
@@ -269,10 +301,41 @@ public class GameActivity extends AppCompatActivity {
         return (int) (Math.random()*(RIGHT+1-LEFT)) + LEFT;
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        stopTicker();
+    private void setArrowsListeners() {
+        rightArrow.setOnClickListener(v -> {
+            if (carPos < RIGHT) {
+                game_IMG_car[carPos].setVisibility(View.INVISIBLE);
+                game_IMG_car[++carPos].setVisibility(View.VISIBLE);
+                checkHit();
+            }
+        });
+        leftArrow.setOnClickListener(v -> {
+            if (carPos > LEFT) {
+                game_IMG_car[carPos].setVisibility(View.INVISIBLE);
+                game_IMG_car[--carPos].setVisibility(View.VISIBLE);
+                checkHit();
+            }
+        });
+    }
+
+    public boolean isSensorExists(int sensorType) {
+        return (sensorManager.getDefaultSensor(sensorType) != null);
+    }
+
+    private void moveCarBySensors(DirectionAction action) {
+        if (action == DirectionAction.LEFT) {
+            if (carPos < RIGHT) {
+                game_IMG_car[carPos].setVisibility(View.INVISIBLE);
+                game_IMG_car[++carPos].setVisibility(View.VISIBLE);
+                checkHit();
+            }
+        } else if (action == DirectionAction.RIGHT) {
+            if (carPos > LEFT) {
+                game_IMG_car[carPos].setVisibility(View.INVISIBLE);
+                game_IMG_car[--carPos].setVisibility(View.VISIBLE);
+                checkHit();
+            }
+        }
     }
 
     private void stopTicker() {
@@ -442,6 +505,40 @@ public class GameActivity extends AppCompatActivity {
         nitrosSound = MediaPlayer.create(this, R.raw.nitros_sound);
     }
 
+    private void initSensor() {
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    }
+
+    private void updateUI() {
+        startTicker();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updateUI();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(accSensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        hideSystemUI();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopTicker();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(accSensorEventListener);
+    }
+
     public void hideSystemUI() {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -454,4 +551,5 @@ public class GameActivity extends AppCompatActivity {
                         //| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
+
 }

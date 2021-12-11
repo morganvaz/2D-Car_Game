@@ -1,4 +1,4 @@
-package com.example.hw1;
+package com.example.hw1.Database;
 
 import android.app.Application;
 

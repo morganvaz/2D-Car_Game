@@ -3,7 +3,7 @@ package com.example.hw1.Models;
 
 public class Record implements Comparable<Record> {
     //    private String name ="";
-    private int score = 0;
+    private long score = 0;
     private double lat = 0.0;
     private double lon = 0.0;
 
@@ -19,11 +19,11 @@ public class Record implements Comparable<Record> {
 //        return this;
 //    }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 
-    public Record setScore(int score) {
+    public Record setScore(long score) {
         this.score = score;
         return this;
     }
@@ -53,7 +53,7 @@ public class Record implements Comparable<Record> {
 
     @Override
     public int compareTo(Record r) {
-        return r.getScore() - this.getScore();
+        return (int) (r.getScore() - this.getScore());
     }
 
 }

@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.hw1.CallBacks.CallBack_List;
-import com.example.hw1.MSPv3;
-import com.example.hw1.MyDB;
+import com.example.hw1.Database.MSPv3;
+import com.example.hw1.Database.MyDB;
 import com.example.hw1.R;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
