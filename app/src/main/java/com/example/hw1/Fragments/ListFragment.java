@@ -38,7 +38,6 @@ public class ListFragment extends Fragment {
         myDB = new Gson().fromJson(fromJSON,MyDB.class);
         if(myDB == null)
             myDB = new MyDB();
-        myDB = new Gson().fromJson(fromJSON, MyDB.class);
         for (int i = 0; i < records.length; i++)
             if (i < myDB.getRecords().size())
                 records[i].setText(myDB.getRecords().get(i).toString());

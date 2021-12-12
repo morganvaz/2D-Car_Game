@@ -79,7 +79,7 @@ public class GameActivity extends AppCompatActivity {
         // initiate DB
         String fromJSON = MSPv3.getInstance(this).getStringSP("MY_DB", "");
         myDB = new Gson().fromJson(fromJSON, MyDB.class);
-        if (myDB == null)   // MAYBE USELESS?
+        if (myDB == null)
             myDB = new MyDB();
         // Set game mode
         if (getIntent() != null){

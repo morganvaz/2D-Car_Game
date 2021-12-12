@@ -69,9 +69,11 @@ public class HighScoreActivity extends AppCompatActivity implements OnMapReadyCa
         public void rowSelected(int i) {
             String fromJSON = MSPv3.getInstance(getApplicationContext()).getStringSP("MY_DB","");
             MyDB myDB = new Gson().fromJson(fromJSON,MyDB.class);
-            if (i < myDB.getRecords().size()) {
-                Record record = myDB.getRecords().get(i);
-                callBack_map.locationSelected(record);
+            if(myDB != null) {
+                if (i < myDB.getRecords().size()) {
+                    Record record = myDB.getRecords().get(i);
+                    callBack_map.locationSelected(record);
+                }
             }
         }
     };
